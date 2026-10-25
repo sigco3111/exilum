@@ -192,7 +192,7 @@ export default {
           World.stats.level = (World.stats.level || 1) + 1;
           // PoE-ish curve: each level costs ~28% more than the last.
           World.stats.xpNext = Math.round(World.stats.xpNext * 1.28);
-          bus.emit(EV.UI_TOAST, { text: `Level ${World.stats.level}`, tier: 'levelup' });
+          bus.emit(EV.UI_TOAST, { text: `레벨 ${World.stats.level}`, tier: 'levelup' });
           bus.emit(EV.VFX_SPAWN, { kind: 'levelup', pos: World.player?.pos?.clone?.() });
           bus.emit(EV.SFX_PLAY, { id: 'level_up' });
         }

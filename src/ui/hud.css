@@ -4,7 +4,7 @@
 #hud-root {
   position: absolute; inset: 0; pointer-events: none;
   color: #cdbb8e;
-  font-family: "Trajan Pro", "Cinzel", Georgia, serif;
+  font-family: "Trajan Pro", "Cinzel", "Noto Serif KR", Georgia, serif;
   --gold: #c9a227; --gold-lite: #f0d97a; --gold-deep: #6b5518;
   --ink: #05060a; --panel: #0b0c11; --edge: #2a2c34; --text: #cdbb8e; --dim: #8b8266;
   user-select: none; -webkit-user-select: none;
@@ -137,7 +137,7 @@
 #dmg-layer { position: absolute; inset: 0; overflow: hidden; }
 .dmg {
   position: absolute; left: 0; top: 0; will-change: transform, opacity;
-  font-family: "Cinzel", Georgia, serif; font-weight: 700; font-size: 22px;
+  font-family: "Cinzel", "Noto Serif KR", Georgia, serif; font-weight: 700; font-size: 22px;
   transform: translate(-50%,-50%); white-space: nowrap;
   text-shadow: 0 0 4px #000, 0 2px 3px #000, 1px 1px 0 #000, -1px -1px 0 #000;
 }
@@ -396,3 +396,6 @@
   font-size: 11px; color: var(--text); opacity: .78; font-variant-numeric: tabular-nums;
   text-shadow: 0 1px 2px #000;
 }
+
+/* 한글 표시: 영문용 자간 제거 */
+#ui-root *, #loot-labels * { letter-spacing: normal !important; word-break: keep-all; }

@@ -34,7 +34,7 @@ export class Objective {
 
     this.label = el('div', 'ob-label', this.node);
     this.dist = el('div', 'ob-dist', this.node);
-    this.label.textContent = 'THE SUNDER';
+    this.label.textContent = '균열의 땅';
 
     this.over = false;
     this._offWon = bus.on(EV.GAME_WON, () => { this.over = true; this.node.style.display = 'none'; });

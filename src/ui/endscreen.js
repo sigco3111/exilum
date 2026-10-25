@@ -30,7 +30,7 @@ export class EndScreen {
     this.sub = el('div', 'es-sub', this.panel);
     this.stats = el('div', 'es-stats', this.panel);
     this.hint = el('div', 'es-hint', this.panel);
-    this.hint.textContent = 'press R to descend again';
+    this.hint.textContent = 'R 키를 눌러 다시 내려가기';
 
     this.shown = false;
     this._offWon = bus.on(EV.GAME_WON, (d) => this.show('won', d));
@@ -68,18 +68,18 @@ export class EndScreen {
 
     this.wrap.classList.toggle('es-won', won);
     this.wrap.classList.toggle('es-lost', !won);
-    this.kicker.textContent = won ? 'the sunder is broken' : 'the dark takes you';
-    this.title.textContent = won ? 'VICTORY' : 'YOU DIED';
+    this.kicker.textContent = won ? '균열이 닫혔다' : '어둠이 당신을 삼킨다';
+    this.title.textContent = won ? '승리' : '사망';
     this.sub.textContent = won
-      ? `${d.bossName || 'the Sunderer'} lies dead on the arena floor.`
-      : `slain by ${d.killer || 'the dark'}.`;
+      ? `${d.bossName || '균열의 지배자'}이(가) 투기장 바닥에 쓰러졌다.`
+      : `${d.killer || '어둠'}에게 쓰러졌다.`;
 
     this.stats.textContent = '';
-    this._row('Enemies slain', String(d.kills ?? 0), '#e8e2d0');
-    this._row('Level reached', String(d.level ?? 1), '#c9a227');
-    this._row('Experience', String(Math.floor(d.xp ?? 0)));
-    if (won && d.waves != null) this._row('Waves survived', String(d.waves));
-    this._row('Time', fmtTime(d.seconds));
+    this._row('처치한 적', String(d.kills ?? 0), '#e8e2d0');
+    this._row('도달 레벨', String(d.level ?? 1), '#c9a227');
+    this._row('경험치', String(Math.floor(d.xp ?? 0)));
+    if (won && d.waves != null) this._row('버틴 웨이브', String(d.waves));
+    this._row('시간', fmtTime(d.seconds));
 
     this.wrap.style.display = 'flex';
     // one frame later so the CSS transition actually runs from its start state

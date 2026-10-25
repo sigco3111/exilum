@@ -69,13 +69,13 @@ export class BossBar {
     this.ghost.style.transform = `scaleX(${this.ghostV.toFixed(4)})`;
 
     // name (only on change)
-    const nm = b.name || 'Unnamed Horror';
+    const nm = b.name || '이름 없는 공포';
     if (nm !== this._name) { this._name = nm; this.name.textContent = nm; }
 
     // phase pips
     const phases = b.phases || 3;
     const cur = b.phase || (frac > 0.66 ? 1 : frac > 0.33 ? 2 : 3);
-    const ptxt = `Phase ${cur} / ${phases}`;
+    const ptxt = `${cur} / ${phases} 페이즈`;
     if (ptxt !== this._phaseTxt) { this._phaseTxt = ptxt; this.phase.textContent = ptxt; }
 
     // resistance / hp line beneath — read the boss's own resists when exposed

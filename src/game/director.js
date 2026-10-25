@@ -125,7 +125,7 @@ export class Director {
       if (this.activeCount >= CFG.enemy.maxActive) break;
       this._spawnSlot(s.archetype, s.x, s.z, s.rarity, s.facing);
     }
-    bus.emit(EV.UI_TOAST, { text: `Wave ${this.wave}`, tier: 'wave' });
+    bus.emit(EV.UI_TOAST, { text: `${this.wave} 웨이브`, tier: 'wave' });
   }
 
   _weightedBag(tier) {

@@ -1,164 +1,73 @@
-# EXILUM
+# EXILIUM · 한국어판
 
-An isometric action RPG that runs in the browser. Three.js, no game engine, and **no art assets** —
-every texture, mesh, animation, and sound is generated procedurally at load time.
+> **원작:** [Sonali-Sharma-tech/exilum](https://github.com/Sonali-Sharma-tech/exilum) (MIT 라이선스, © 2026 Sonali Sharma)
+> **한글화 포크:** [sigco3111/exilum](https://github.com/sigco3111/exilum)
+> **▶ 바로 플레이:** https://sigco3111.github.io/exilum/
 
-**▶ Play it now, no download: [exilum.vercel.app](https://exilum.vercel.app)**
+브라우저에서 돌아가는 쿼터뷰 액션 RPG입니다. Three.js만 사용했고 게임 엔진도, 그림 파일도 없습니다.
+텍스처, 메시, 애니메이션, 사운드까지 전부 로딩할 때 코드로 생성합니다.
 
-Built with Dimension + Claude Opus 5 — one prompt fanned out into 14
-parallel subagents (rendering, procedural geometry, combat, loot, audio, VFX…), coordinating over
-an IRC channel and iterating against blind A/B comparisons with real Path of Exile 2 frames.
+원작은 Dimension과 Claude Opus 5로 만들었고, 하나의 프롬프트가 14개의 병렬 서브에이전트(렌더링, 절차적 지오메트리,
+전투, 전리품, 오디오, VFX 등)로 갈라져 IRC 채널에서 서로 조율하며 제작됐다고 합니다. 렌더러는 Path of Exile 2 실제
+화면과의 블라인드 A/B 비교로 13라운드에 걸쳐 다듬었습니다.
+
+## 한글화 범위
+
+| 영역 | 내용 |
+|---|---|
+| HUD | 레벨 표시, 보스 체력바(페이즈 표시), 미니맵 지역명·방위, 목표 나침반, 알림 메시지(마나 부족, 소지품 가득 참 등) |
+| 스킬 | 가르기, 화염구/화염폭풍, 냉기 폭발, 연쇄 번개 등 스킬 이름 |
+| 소지품·툴팁 | 장비 슬롯 이름, 아이템 이름, 요구 조건, 기본 수치(물리 피해, 치명타 확률, 방어도 등) |
+| 아이템 속성 | 접두/접미 속성 이름과 효과 문구(예: `최대 생명력 +40`, `공격 속도 12% 증가`), 고유 아이템 이름과 설명 |
+| 화폐 | 지혜의 주문서, 변환의 오브 등 화폐 이름과 설명 |
+| 적·보스 | 몬스터 이름, 보스 '갈라진 자 오르돌스', 페이즈 알림 |
+| 엔딩 화면 | 승리/사망 문구, 결과 통계 |
+| 글꼴 | Noto Serif KR 추가(한글 표시용) |
+
+원작의 ID, 게임 규칙, 수치, 저작권 표기는 그대로 유지했습니다. 영문 원본 README는 [`README.en.md`](README.en.md)에 있습니다.
+
+### 번역 방침과 한계
+
+- 아이템 이름은 한국어 어순에 맞춰 `접미 속성 + 접두 속성 + 기본 아이템` 순서로 조합됩니다. 예: `새끼 용의 윤나는 녹슨 검`
+- 희귀 아이템 이름은 두 단어 조합이라 `파멸 재앙`처럼 직역 느낌이 날 수 있습니다.
+- F3 디버그 오버레이와 콘솔 로그는 개발용이라 영어 그대로 두었습니다.
+- 처음 월드를 만들 때 절차적 생성 때문에 약 1분이 걸릴 수 있습니다. 일반적인 PC 성능과 전체 전투 흐름은 아직 충분히 검증하지 못했습니다.
+
+## 조작법
+
+| 입력 | 동작 |
+|---|---|
+| **W A S D** | 이동 (카메라 기준) |
+| **좌클릭** | 공격 (가르기) |
+| 우클릭 (누르고 있기) | 커서 위치로 걷기 |
+| `Q` `F` `E` `R` | 화염구 · 폭풍 창 · 대지 강타 · 공허 광선 |
+| `1` `2` `3` `4` | 냉기 폭발 · 부식 지대 · 빙하 파편 · 저주 추적자 |
+| `Space` | 구르기 (무적 프레임) |
+| 마우스 휠 | 확대/축소 · `I` 소지품 · `F3` 디버그 |
+
+화면 아래 나침반을 따라 보스 아레나 **균열의 땅**으로 가서 **오르돌스**를 쓰러뜨리면 승리합니다.
+죽으면 처음부터 다시 시작하며, 엔딩 화면에서 `R` 키로 재시작할 수 있습니다.
+
+## 기술 요약
+
+- **렌더링:** 캐스케이드 섀도 맵, ACES 필름 톤매핑, GTAO, SMAA, 갓레이, 블룸, 안개, 이미지 기반 조명, 벽 컷어웨이
+- **절차적 콘텐츠:** 시드 기반 던전 생성(방 7종), 캔버스로 그린 돌 텍스처 아틀라스, 스킨드 리그와 키프레임 애니메이션, 적 4종 + 보스, 접사와 희귀도가 있는 아이템 시스템
+- **시뮬레이션:** 고정 타임스텝, 캡슐 vs 그리드 충돌, 공간 해시, 래그돌, 흐름장 경로탐색, 인카운터 디렉터
+- **오디오:** Web Audio API 합성 (사운드 파일 없음)
+- **빌드:** Vite 8 + Three.js
+
+## 로컬 실행
 
 ```bash
 npm install
-npm run dev        # http://localhost:5188
+npm run dev        # http://localhost:5188/exilum/
+npm run build      # dist/ 생성 (GitHub Pages는 /exilum/ 경로 기준)
 ```
 
-## Controls
+## 배포
 
-| input | action |
-|---|---|
-| **W A S D** | move — camera-relative, so `W` is always "up the screen" |
-| **left-click** | attack (Cleave) |
-| right-click (hold) | walk to cursor |
-| `Q` `F` `E` `R` | Fireball · Storm Lance · Ground Slam · Void Beam |
-| `1` `2` `3` `4` | Frost Nova · Caustic Field · Blink Step · Hex Seeker |
-| `Space` | dodge roll (i-frames) |
-| mouse wheel | zoom · `I` inventory · `F3` debug overlay |
+`main` 브랜치에 푸시한 뒤 `deploy` 워크플로가 Vite 빌드를 GitHub Pages로 올립니다. 설정은 `.github/workflows/deploy.yml`에 있습니다.
 
-Follow the compass at the bottom of the screen to **The Sunder**, the boss arena. Kill
-**Ordolth, the Sundered** to win. Die and you start over. `R` restarts from either end screen.
+## 라이선스
 
-## What's in here
-
-A complete game loop — generate a dungeon, fight through it, find loot, level up, beat a
-three-phase boss — built on a from-scratch engine layer.
-
-**Rendering.** Cascaded shadow maps, ACES filmic tonemapping, GTAO ambient occlusion with a
-separate contact-AO pass, SMAA, god rays, bloom, coloured aerial-perspective fog, an
-image-based-lighting ambient term, and a screen-space cutaway that punches a dithered hole in any
-wall standing between the camera and the player.
-
-**Procedural content.** A seeded dungeon generator (7 room types, walls/columns/props/decals), a
-stone atlas with albedo + normal + ORM maps painted on canvas, a skinned character rig with
-hand-keyframed animation clips, four enemy archetypes plus a boss, and an item system with affixes
-and rarity tiers.
-
-**Simulation.** Fixed-timestep loop with interpolation, capsule-vs-grid collision with per-axis
-sliding and step-up, a spatial hash for neighbour queries, ragdolls, a flow-field pathfinder shared
-by every enemy, and an encounter director that composes packs into readable formations rather than
-spawning them at random.
-
-**Audio.** Synthesised through the Web Audio API — no sound files.
-
-## The interesting part: it was built against measurements, not vibes
-
-The renderer was tuned over 13 rounds against a numeric rubric, with blind A/B comparisons against
-real Path of Exile 2 frames judged by agents who didn't know which side was which. `tools/analyze.mjs`
-is a zero-dependency frame analyser (it decodes PNG by hand) that reports exposure, colour balance,
-step-energy distribution, and structure metrics.
-
-**PoE2 still wins those blind comparisons 4/4.** That was never really in doubt — it's ~100 developers
-× 7 years on a proprietary engine against procedural generation in a browser. What the process
-produced instead is a precise account of *why*, and most of the value in this repo is in
-`MEASUREMENT_NOTES.md` (220KB of it): the wrong turns, the metrics that had to be thrown away, and the
-bugs that only measurement could find.
-
-A few examples of what that turned up:
-
-- **A protocol gate was 96% brightness.** `localContrast` moved +55.2% under a pure exposure change,
-  and correlated with mean luminance at **+0.963**. Agents had been "fixing" it by adding light for
-  rounds. On the exposure-invariant form the verdict reversed completely.
-- **Fine detail was already at reference parity (1.05×); the deficit was large steps — 5.5× short.**
-  "Reads as pasted-on" is what a frame looks like when objects lack strong luminance steps at their
-  boundaries. Adding more texture would have moved a metric already at parity.
-- **Three judges called the floors "corduroy striped" and two separate fixes failed** — because every
-  instrument measured *luminance* anisotropy, which was correctly in range. The defect was in
-  **chroma** directionality, which nothing had ever measured.
-- **The ACES inflection sits at linear input x = 0.1203.** Below it the tonemap expands scene steps;
-  above it it compresses them. Three of four camera stations were operating past it, unmeasured for
-  thirteen rounds.
-- **A "+32% fps" win didn't reproduce** — it was monster-count drift between A/B legs. Pinning the
-  roster took the noise floor from ±14% to ±0.4%, which retroactively invalidated several earlier
-  "wins".
-- **The character-not-centred bug was `devicePixelRatio`.** `setSize(w, h, false)` skips the canvas
-  CSS size, and a canvas's attributes are its intrinsic size, so on a Retina display it rendered 2×
-  too large and you saw the top-left quarter. Three of my own tests agreed it was centred — all three
-  measured canvas space, not screen space.
-- **2.4× came from lights that were mathematically contributing nothing.** A PointLight with
-  `decay = 2` attenuates to *exactly* zero at its `distance`, so one whose influence sphere misses
-  the frustum cannot alter a pixel — `skylight-arena` has reach 28.1 and sat 98.3 world units away.
-  14 of 23 were like that. Culling them: **42 → 102 fps, and 0 of 9,072,000 pixels differ** across
-  all seven rooms. The catch is that Three.js keys its shader cache on the light count, so a
-  free-running cull recompiled every material continuously — **worst frame 4,295 ms**. Quantising to
-  five prewarmed rungs fixes it.
-- **A depth prepass reported a 12.5ms win that was an empty screen.** Overdraw genuinely measures
-  2.32×, and the prepass "saved" more than 2.32× could possibly yield — the tell. The pixel diff
-  found 90.7% of pixels changed and the whole dungeon missing: depth went to the canvas while the
-  composer renders into its own framebuffer, so `EqualDepth` rejected everything. Done correctly it
-  *loses* 1.6ms.
-- **`PCFSoftShadowMap` is deprecated in three 0.185** — it silently becomes `PCFShadowMap` *and*
-  sets `needsUpdate` on every material in the scene. Asking for the nicer filter bought the same
-  filter plus a guaranteed full-scene recompile. Found with a setter tripwire on `shadowMap.type`.
-- **Ambient occlusion was switched off in the shipped build** and nobody noticed: a `medium` quality
-  default disabled GTAO to buy frame rate. It's back on, and 2.3× faster than `medium` used to be.
-
-## Layout
-
-```
-src/core/      engine, fixed-step clock, input, physics, collision, spatial hash, ragdoll
-src/render/    renderer pipeline, sky + lighting, camera, wall cutaway, light culling, shaders
-src/world/     dungeon generator, level builder, props, terrain, decals
-src/entity/    player rig, skeletal animation
-src/combat/    damage model, skills, projectiles, particles, VFX
-src/game/      enemy AI, encounter director, loot, items, affixes, set-pieces
-src/gen/       procedural materials, character/enemy/prop/sprite generators, noise
-src/ui/        HUD — orbs, skill bar, minimap, inventory, boss bar, FPS meter, end screen
-src/audio/     Web Audio synthesis
-tools/         frame analysers and capture harnesses
-```
-
-`refs/` (Path of Exile 2 press screenshots used as measurement targets) and `shots/` (capture output)
-are gitignored. They're Grinding Gear Games' material and not ours to redistribute — everything here
-was measured *against* them and contains none of them.
-
-## Performance
-
-Measured at 1568×1015 on a Retina display (DPR 2), rAF-clocked, real keyboard and mouse input:
-
-| | mean | p50 | p90 | p99 |
-|---|---|---|---|---|
-| exploration | **101 fps** | 100 | 96 | 89 |
-| combat, ≤16 lights in frustum | ~70 fps | — | — | — |
-| combat, 28–34 lights in frustum | 22–38 fps | — | — | — |
-
-Before this work the same exploration scene ran **42 fps**. The gain is point-light frustum
-culling (`src/render/lightcull.js`), and it is **pixel-identical** — 0 of 9,072,000 pixels differ
-across all seven rooms, because a `decay = 2` PointLight attenuates to exactly zero at its
-`distance` and culling one whose sphere misses the frustum is arithmetic, not approximation.
-
-**Ambient occlusion is on** (it had been silently disabled by a `medium` quality default) and
-**nothing is ever dropped by default** — `F3` shows `lights dropped`, which reads 0.
-
-The floor case is a dense fight with several spell VFX alive at once, where 28–34 lights are
-genuinely in frustum. Every one contributes, so the default keeps them all. If your GPU needs the
-headroom, set `graphics.lightBudget` in `src/core/config.js` (try `20`): +78% in that frame, at a
-measured 8.1 dimmest lights dropped per frame.
-
-**These numbers are a floor, not a forecast.** They come from a headless software rasteriser
-(SwiftShader) with no GPU, and the per-light cost is **100% fragment work** — 0.585 ms/light at
-full resolution, 0.087 at quarter resolution, fixed CPU component ~0. That is precisely the work
-a real GPU spreads across hundreds of cores.
-
-## Docs
-
-- **`MEASUREMENT_NOTES.md`** — the full record. Every metric, confound, and correction.
-- **`STATE.md`** — current state and what's next.
-- **`CAPTURE_PROTOCOL.md`** — the six conditions that make two frame measurements comparable.
-- **`POE2_RUBRIC.md`** — the numeric targets.
-- **`NEXT_ROUND_ITEM_1.md`** — the highest-value open defect, diagnosed down to the line of code.
-
-## Licence
-
-MIT. Path of Exile 2 is a trademark of Grinding Gear Games; this project is unaffiliated and uses
-their published screenshots only as private local reference during development.
+MIT. 원작자 Sonali Sharma의 저작권 고지는 [`LICENSE`](LICENSE)에 그대로 있습니다.

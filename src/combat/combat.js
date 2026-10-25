@@ -560,7 +560,7 @@ function tryCast(ref, origin, dir) {
   if (now < gcdUntil) return false;                       // global cooldown
   if (now < (cd[skill.id] || 0)) return false;            // per-skill cooldown
   if ((p.mana || 0) < (skill.cost || 0)) {                // mana gate
-    bus.emit(EV.UI_TOAST, { text: 'Not enough mana', tier: 'warn' });
+    bus.emit(EV.UI_TOAST, { text: '마나가 부족합니다', tier: 'warn' });
     bus.emit(EV.SFX_PLAY, { id: 'fizzle' });
     return false;
   }

@@ -24,7 +24,7 @@ const bar = boot.querySelector('.bar i');
 const msg = boot.querySelector('[data-boot-msg]');
 bus.on(EV.BOOT_PROGRESS, ({ frac, msg: m }) => {
   bar.style.width = `${Math.round(frac * 100)}%`;
-  if (m) msg.textContent = m.replace(/[-_]/g, ' ');
+  if (m) msg.textContent = '세계를 벼리는 중 · ' + m.replace(/[-_:]/g, ' ');
 });
 
 const canvas = document.getElementById('viewport');
@@ -77,7 +77,7 @@ engine.boot().then(() => {
   }, 260);
 }).catch((e) => {
   console.error(e);
-  msg.textContent = 'boot failed — see console';
+  msg.textContent = '부팅 실패 — 콘솔을 확인하세요';
   window.__EXILIUM_ERROR = String(e && e.stack || e);
 });
 

@@ -27,7 +27,7 @@ export class Minimap {
     this.x = this.canvas.getContext('2d');
 
     this._buildFrame();
-    this.zone = el('div', 'mm-zone', this.box); this.zone.textContent = 'The Sunder';
+    this.zone = el('div', 'mm-zone', this.box); this.zone.textContent = '균열의 땅';
 
     this.map = null; this.fog = null; this.mapScale = 1;
     this.bounds = null;
@@ -57,7 +57,7 @@ export class Minimap {
     // N marker
     svg('circle', { cx: s / 2, cy: 6, r: 6, fill: '#0a0a0a', stroke: PAL.gold, 'stroke-width': 1 }, g);
     const nt = svg('text', { x: s / 2, y: 9, 'text-anchor': 'middle', 'font-size': 8, fill: PAL.goldLite }, g);
-    nt.textContent = 'N';
+    nt.textContent = '북';
   }
 
   _bake() {

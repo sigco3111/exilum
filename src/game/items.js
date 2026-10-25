@@ -49,95 +49,95 @@ function weightedPick(list, weightOf) {
 // ---------------------------------------------------------------------------
 export const BASES = [
   // ---- one-hand weapons ---------------------------------------------------
-  { key: 'rustedSword', name: 'Rusted Sword', slot: 'weapon', hand: 1, w: 2, h: 3, req: { level: 1, str: 8, dex: 8, int: 0 },
+  { key: 'rustedSword', name: '녹슨 검', slot: 'weapon', hand: 1, w: 2, h: 3, req: { level: 1, str: 8, dex: 8, int: 0 },
     tags: ['weapon', 'melee', 'sword'], weapon: { physMin: 5, physMax: 11, crit: 5, aps: 1.55 } },
-  { key: 'glintDagger', name: 'Glinting Dagger', slot: 'weapon', hand: 1, w: 1, h: 3, req: { level: 1, str: 0, dex: 9, int: 6 },
+  { key: 'glintDagger', name: '반짝이는 단검', slot: 'weapon', hand: 1, w: 1, h: 3, req: { level: 1, str: 0, dex: 9, int: 6 },
     tags: ['weapon', 'melee', 'dagger'], weapon: { physMin: 3, physMax: 12, crit: 6.5, aps: 1.6 } },
-  { key: 'stoneHammer', name: 'Stone Hammer', slot: 'weapon', hand: 1, w: 2, h: 3, req: { level: 3, str: 14, dex: 0, int: 0 },
+  { key: 'stoneHammer', name: '돌 망치', slot: 'weapon', hand: 1, w: 2, h: 3, req: { level: 3, str: 14, dex: 0, int: 0 },
     tags: ['weapon', 'melee', 'mace'], weapon: { physMin: 9, physMax: 16, crit: 5, aps: 1.25 } },
-  { key: 'driftwoodWand', name: 'Driftwood Wand', slot: 'weapon', hand: 1, w: 1, h: 3, req: { level: 1, str: 0, dex: 0, int: 12 },
+  { key: 'driftwoodWand', name: '유목 지팡이', slot: 'weapon', hand: 1, w: 1, h: 3, req: { level: 1, str: 0, dex: 0, int: 12 },
     tags: ['weapon', 'caster', 'wand'], weapon: { physMin: 3, physMax: 7, crit: 7, aps: 1.4 } },
-  { key: 'drearySceptre', name: 'Dreary Sceptre', slot: 'weapon', hand: 1, w: 2, h: 3, req: { level: 3, str: 10, dex: 0, int: 10 },
+  { key: 'drearySceptre', name: '칙칙한 홀', slot: 'weapon', hand: 1, w: 2, h: 3, req: { level: 3, str: 10, dex: 0, int: 10 },
     tags: ['weapon', 'caster', 'sceptre', 'melee'], weapon: { physMin: 6, physMax: 13, crit: 6, aps: 1.4 } },
 
   // ---- two-hand weapons ---------------------------------------------------
-  { key: 'corrodedBlade', name: 'Corroded Blade', slot: 'weapon', hand: 2, w: 2, h: 4, req: { level: 5, str: 17, dex: 17, int: 0 },
+  { key: 'corrodedBlade', name: '부식된 장검', slot: 'weapon', hand: 2, w: 2, h: 4, req: { level: 5, str: 17, dex: 17, int: 0 },
     tags: ['weapon', 'melee', 'sword', 'twohand'], weapon: { physMin: 12, physMax: 22, crit: 5, aps: 1.45 } },
-  { key: 'stoneAxe', name: 'Stone Axe', slot: 'weapon', hand: 2, w: 2, h: 4, req: { level: 6, str: 21, dex: 9, int: 0 },
+  { key: 'stoneAxe', name: '돌 도끼', slot: 'weapon', hand: 2, w: 2, h: 4, req: { level: 6, str: 21, dex: 9, int: 0 },
     tags: ['weapon', 'melee', 'axe', 'twohand'], weapon: { physMin: 16, physMax: 26, crit: 5, aps: 1.3 } },
-  { key: 'gnarledBranch', name: 'Gnarled Branch', slot: 'weapon', hand: 2, w: 2, h: 4, req: { level: 1, str: 14, dex: 0, int: 14 },
+  { key: 'gnarledBranch', name: '옹이진 가지', slot: 'weapon', hand: 2, w: 2, h: 4, req: { level: 1, str: 14, dex: 0, int: 14 },
     tags: ['weapon', 'caster', 'staff', 'twohand'], weapon: { physMin: 10, physMax: 20, crit: 6.5, aps: 1.3 } },
-  { key: 'crudeBow', name: 'Crude Bow', slot: 'weapon', hand: 2, w: 2, h: 4, req: { level: 1, str: 0, dex: 14, int: 0 },
+  { key: 'crudeBow', name: '조잡한 활', slot: 'weapon', hand: 2, w: 2, h: 4, req: { level: 1, str: 0, dex: 14, int: 0 },
     tags: ['weapon', 'bow', 'twohand'], weapon: { physMin: 6, physMax: 14, crit: 6, aps: 1.4 } },
 
   // ---- body armour --------------------------------------------------------
-  { key: 'plateVest', name: 'Plate Vest', slot: 'body', w: 2, h: 3, req: { level: 1, str: 12, dex: 0, int: 0 },
+  { key: 'plateVest', name: '판금 조끼', slot: 'body', w: 2, h: 3, req: { level: 1, str: 12, dex: 0, int: 0 },
     tags: ['armour', 'body', 'ar'], def: { type: 'ar', base: 34 } },
-  { key: 'shabbyJerkin', name: 'Shabby Jerkin', slot: 'body', w: 2, h: 3, req: { level: 1, str: 0, dex: 12, int: 0 },
+  { key: 'shabbyJerkin', name: '낡은 가죽조끼', slot: 'body', w: 2, h: 3, req: { level: 1, str: 0, dex: 12, int: 0 },
     tags: ['armour', 'body', 'ev'], def: { type: 'ev', base: 34 } },
-  { key: 'simpleRobe', name: 'Simple Robe', slot: 'body', w: 2, h: 3, req: { level: 1, str: 0, dex: 0, int: 12 },
+  { key: 'simpleRobe', name: '소박한 로브', slot: 'body', w: 2, h: 3, req: { level: 1, str: 0, dex: 0, int: 12 },
     tags: ['armour', 'body', 'es'], def: { type: 'es', base: 14 } },
 
   // ---- helm ---------------------------------------------------------------
-  { key: 'ironHat', name: 'Iron Hat', slot: 'helm', w: 2, h: 2, req: { level: 1, str: 8, dex: 0, int: 0 },
+  { key: 'ironHat', name: '철 모자', slot: 'helm', w: 2, h: 2, req: { level: 1, str: 8, dex: 0, int: 0 },
     tags: ['armour', 'helm', 'ar'], def: { type: 'ar', base: 15 } },
-  { key: 'leatherCap', name: 'Leather Cap', slot: 'helm', w: 2, h: 2, req: { level: 1, str: 0, dex: 8, int: 0 },
+  { key: 'leatherCap', name: '가죽 모자', slot: 'helm', w: 2, h: 2, req: { level: 1, str: 0, dex: 8, int: 0 },
     tags: ['armour', 'helm', 'ev'], def: { type: 'ev', base: 15 } },
-  { key: 'vineCirclet', name: 'Vine Circlet', slot: 'helm', w: 2, h: 2, req: { level: 1, str: 0, dex: 0, int: 8 },
+  { key: 'vineCirclet', name: '덩굴 관', slot: 'helm', w: 2, h: 2, req: { level: 1, str: 0, dex: 0, int: 8 },
     tags: ['armour', 'helm', 'es'], def: { type: 'es', base: 7 } },
 
   // ---- gloves -------------------------------------------------------------
-  { key: 'ironGauntlets', name: 'Iron Gauntlets', slot: 'gloves', w: 2, h: 2, req: { level: 1, str: 8, dex: 0, int: 0 },
+  { key: 'ironGauntlets', name: '철 건틀릿', slot: 'gloves', w: 2, h: 2, req: { level: 1, str: 8, dex: 0, int: 0 },
     tags: ['armour', 'gloves', 'ar'], def: { type: 'ar', base: 12 } },
-  { key: 'rawhideGloves', name: 'Rawhide Gloves', slot: 'gloves', w: 2, h: 2, req: { level: 1, str: 0, dex: 8, int: 0 },
+  { key: 'rawhideGloves', name: '생가죽 장갑', slot: 'gloves', w: 2, h: 2, req: { level: 1, str: 0, dex: 8, int: 0 },
     tags: ['armour', 'gloves', 'ev'], def: { type: 'ev', base: 12 } },
-  { key: 'woolGloves', name: 'Wool Gloves', slot: 'gloves', w: 2, h: 2, req: { level: 1, str: 0, dex: 0, int: 8 },
+  { key: 'woolGloves', name: '양모 장갑', slot: 'gloves', w: 2, h: 2, req: { level: 1, str: 0, dex: 0, int: 8 },
     tags: ['armour', 'gloves', 'es'], def: { type: 'es', base: 5 } },
 
   // ---- boots --------------------------------------------------------------
-  { key: 'ironGreaves', name: 'Iron Greaves', slot: 'boots', w: 2, h: 2, req: { level: 1, str: 8, dex: 0, int: 0 },
+  { key: 'ironGreaves', name: '철 경갑', slot: 'boots', w: 2, h: 2, req: { level: 1, str: 8, dex: 0, int: 0 },
     tags: ['armour', 'boots', 'ar'], def: { type: 'ar', base: 12 } },
-  { key: 'rawhideBoots', name: 'Rawhide Boots', slot: 'boots', w: 2, h: 2, req: { level: 1, str: 0, dex: 8, int: 0 },
+  { key: 'rawhideBoots', name: '생가죽 장화', slot: 'boots', w: 2, h: 2, req: { level: 1, str: 0, dex: 8, int: 0 },
     tags: ['armour', 'boots', 'ev'], def: { type: 'ev', base: 12 } },
-  { key: 'woolShoes', name: 'Wool Shoes', slot: 'boots', w: 2, h: 2, req: { level: 1, str: 0, dex: 0, int: 8 },
+  { key: 'woolShoes', name: '양모 신발', slot: 'boots', w: 2, h: 2, req: { level: 1, str: 0, dex: 0, int: 8 },
     tags: ['armour', 'boots', 'es'], def: { type: 'es', base: 5 } },
 
   // ---- belt ---------------------------------------------------------------
-  { key: 'leatherBelt', name: 'Leather Belt', slot: 'belt', w: 2, h: 1, req: { level: 1, str: 0, dex: 0, int: 0 },
-    tags: ['belt'], implicitMod: { render: (v) => `+${v[0]} to maximum Life`, rolls: [[20, 30]] } },
-  { key: 'heavyBelt', name: 'Heavy Belt', slot: 'belt', w: 2, h: 1, req: { level: 8, str: 0, dex: 0, int: 0 },
-    tags: ['belt'], implicitMod: { render: (v) => `+${v[0]} to Strength`, rolls: [[15, 25]] } },
-  { key: 'chainBelt', name: 'Chain Belt', slot: 'belt', w: 2, h: 1, req: { level: 4, str: 0, dex: 0, int: 0 },
-    tags: ['belt'], implicitMod: { render: (v) => `${v[0]}% increased Stun and Block Recovery`, rolls: [[10, 16]] } },
+  { key: 'leatherBelt', name: '가죽 허리띠', slot: 'belt', w: 2, h: 1, req: { level: 1, str: 0, dex: 0, int: 0 },
+    tags: ['belt'], implicitMod: { render: (v) => `최대 생명력 +${v[0]}`, rolls: [[20, 30]] } },
+  { key: 'heavyBelt', name: '묵직한 허리띠', slot: 'belt', w: 2, h: 1, req: { level: 8, str: 0, dex: 0, int: 0 },
+    tags: ['belt'], implicitMod: { render: (v) => `힘 +${v[0]}`, rolls: [[15, 25]] } },
+  { key: 'chainBelt', name: '사슬 허리띠', slot: 'belt', w: 2, h: 1, req: { level: 4, str: 0, dex: 0, int: 0 },
+    tags: ['belt'], implicitMod: { render: (v) => `기절 및 방어 회복 ${v[0]}% 증가`, rolls: [[10, 16]] } },
 
   // ---- rings --------------------------------------------------------------
-  { key: 'ironRing', name: 'Iron Ring', slot: 'ring', w: 1, h: 1, req: { level: 1, str: 0, dex: 0, int: 0 },
-    tags: ['ring', 'jewelry'], implicitMod: { render: (v) => `Adds ${v[0]} to ${v[1]} Physical Damage to Attacks`, rolls: [[1, 2], [3, 5]] } },
-  { key: 'coralRing', name: 'Coral Ring', slot: 'ring', w: 1, h: 1, req: { level: 1, str: 0, dex: 0, int: 0 },
-    tags: ['ring', 'jewelry'], implicitMod: { render: (v) => `+${v[0]} to maximum Life`, rolls: [[20, 30]] } },
-  { key: 'pauaRing', name: 'Paua Ring', slot: 'ring', w: 1, h: 1, req: { level: 1, str: 0, dex: 0, int: 0 },
-    tags: ['ring', 'jewelry'], implicitMod: { render: (v) => `+${v[0]} to maximum Mana`, rolls: [[20, 30]] } },
-  { key: 'goldRing', name: 'Gold Ring', slot: 'ring', w: 1, h: 1, req: { level: 20, str: 0, dex: 0, int: 0 },
-    tags: ['ring', 'jewelry'], implicitMod: { render: (v) => `${v[0]}% increased Rarity of Items found`, rolls: [[4, 8]] } },
+  { key: 'ironRing', name: '철 반지', slot: 'ring', w: 1, h: 1, req: { level: 1, str: 0, dex: 0, int: 0 },
+    tags: ['ring', 'jewelry'], implicitMod: { render: (v) => `공격에 물리 피해 ${v[0]}~${v[1]} 추가`, rolls: [[1, 2], [3, 5]] } },
+  { key: 'coralRing', name: '산호 반지', slot: 'ring', w: 1, h: 1, req: { level: 1, str: 0, dex: 0, int: 0 },
+    tags: ['ring', 'jewelry'], implicitMod: { render: (v) => `최대 생명력 +${v[0]}`, rolls: [[20, 30]] } },
+  { key: 'pauaRing', name: '전복 반지', slot: 'ring', w: 1, h: 1, req: { level: 1, str: 0, dex: 0, int: 0 },
+    tags: ['ring', 'jewelry'], implicitMod: { render: (v) => `최대 마나 +${v[0]}`, rolls: [[20, 30]] } },
+  { key: 'goldRing', name: '금 반지', slot: 'ring', w: 1, h: 1, req: { level: 20, str: 0, dex: 0, int: 0 },
+    tags: ['ring', 'jewelry'], implicitMod: { render: (v) => `발견 아이템 희귀도 ${v[0]}% 증가`, rolls: [[4, 8]] } },
 
   // ---- amulet -------------------------------------------------------------
-  { key: 'coralAmulet', name: 'Coral Amulet', slot: 'amulet', w: 1, h: 1, req: { level: 1, str: 0, dex: 0, int: 0 },
-    tags: ['amulet', 'jewelry'], implicitMod: { render: (v) => `+${v[0]} Life Regenerated per second`, rolls: [[2, 4]] } },
-  { key: 'jadeAmulet', name: 'Jade Amulet', slot: 'amulet', w: 1, h: 1, req: { level: 1, str: 0, dex: 0, int: 0 },
-    tags: ['amulet', 'jewelry'], implicitMod: { render: (v) => `+${v[0]} to Dexterity`, rolls: [[20, 30]] } },
-  { key: 'lapisAmulet', name: 'Lapis Amulet', slot: 'amulet', w: 1, h: 1, req: { level: 1, str: 0, dex: 0, int: 0 },
-    tags: ['amulet', 'jewelry'], implicitMod: { render: (v) => `+${v[0]} to Intelligence`, rolls: [[20, 30]] } },
+  { key: 'coralAmulet', name: '산호 부적', slot: 'amulet', w: 1, h: 1, req: { level: 1, str: 0, dex: 0, int: 0 },
+    tags: ['amulet', 'jewelry'], implicitMod: { render: (v) => `초당 생명력 ${v[0]} 재생`, rolls: [[2, 4]] } },
+  { key: 'jadeAmulet', name: '비취 부적', slot: 'amulet', w: 1, h: 1, req: { level: 1, str: 0, dex: 0, int: 0 },
+    tags: ['amulet', 'jewelry'], implicitMod: { render: (v) => `민첩 +${v[0]}`, rolls: [[20, 30]] } },
+  { key: 'lapisAmulet', name: '청금석 부적', slot: 'amulet', w: 1, h: 1, req: { level: 1, str: 0, dex: 0, int: 0 },
+    tags: ['amulet', 'jewelry'], implicitMod: { render: (v) => `지능 +${v[0]}`, rolls: [[20, 30]] } },
 
   // ---- flasks -------------------------------------------------------------
-  { key: 'lifeFlask', name: 'Life Flask', slot: 'flask', w: 1, h: 2, req: { level: 1, str: 0, dex: 0, int: 0 },
+  { key: 'lifeFlask', name: '생명력 플라스크', slot: 'flask', w: 1, h: 2, req: { level: 1, str: 0, dex: 0, int: 0 },
     tags: ['flask', 'lifeflask'], flask: { restore: 'life', amount: 70, duration: 6 },
     implicitMod: { render: (v) => `Recovers ${v[0]} Life over 6.00 seconds`, rolls: [[70, 70]] } },
-  { key: 'manaFlask', name: 'Mana Flask', slot: 'flask', w: 1, h: 2, req: { level: 1, str: 0, dex: 0, int: 0 },
+  { key: 'manaFlask', name: '마나 플라스크', slot: 'flask', w: 1, h: 2, req: { level: 1, str: 0, dex: 0, int: 0 },
     tags: ['flask', 'manaflask'], flask: { restore: 'mana', amount: 50, duration: 5 },
     implicitMod: { render: (v) => `Recovers ${v[0]} Mana over 5.00 seconds`, rolls: [[50, 50]] } },
-  { key: 'quicksilverFlask', name: 'Quicksilver Flask', slot: 'flask', w: 1, h: 2, req: { level: 4, str: 0, dex: 0, int: 0 },
+  { key: 'quicksilverFlask', name: '수은 플라스크', slot: 'flask', w: 1, h: 2, req: { level: 4, str: 0, dex: 0, int: 0 },
     tags: ['flask', 'utilityflask'], flask: { restore: 'speed', amount: 40, duration: 4 },
-    implicitMod: { render: (v) => `${v[0]}% increased Movement Speed`, rolls: [[40, 40]] } },
+    implicitMod: { render: (v) => `이동 속도 ${v[0]}% 증가`, rolls: [[40, 40]] } },
 ];
 export const BASE_BY_KEY = new Map(BASES.map((b) => [b.key, b]));
 const EQUIP_BASES = BASES.filter((b) => b.slot !== 'flask' && b.slot !== 'currency');
@@ -146,21 +146,21 @@ const EQUIP_BASES = BASES.filter((b) => b.slot !== 'flask' && b.slot !== 'curren
 // Currency — weighted drop table. Common orbs frequent, mirror vanishingly rare.
 // ---------------------------------------------------------------------------
 export const CURRENCIES = [
-  { key: 'scroll',      name: 'Scroll of Wisdom',    weight: 320, maxStack: 40, tint: 0x8a7f66, desc: 'Identifies an item.' },
-  { key: 'portal',      name: 'Portal Scroll',       weight: 160, maxStack: 40, tint: 0x7f8ea3, desc: 'Creates a portal to town.' },
-  { key: 'transmute',   name: 'Orb of Transmutation', weight: 150, maxStack: 40, tint: 0x9aa0b4, desc: 'Upgrades a normal item to magic.' },
-  { key: 'augment',     name: 'Orb of Augmentation', weight: 120, maxStack: 30, tint: 0x8fa2c4, desc: 'Adds a modifier to a magic item.' },
-  { key: 'alteration',  name: 'Orb of Alteration',   weight: 110, maxStack: 20, tint: 0x6c8fc0, desc: 'Rerolls a magic item.' },
-  { key: 'chromatic',   name: 'Chromatic Orb',       weight: 95,  maxStack: 20, tint: 0xb08fc0, desc: 'Reforges the colour of sockets.' },
-  { key: 'fusing',      name: 'Orb of Fusing',       weight: 80,  maxStack: 20, tint: 0xc08a5a, desc: 'Reforges links between sockets.' },
-  { key: 'alchemy',     name: 'Orb of Alchemy',      weight: 55,  maxStack: 10, tint: 0xd0c060, desc: 'Upgrades a normal item to rare.' },
-  { key: 'chance',      name: 'Orb of Chance',       weight: 60,  maxStack: 20, tint: 0xc7b878, desc: 'Upgrades a normal item to a random rarity.' },
-  { key: 'regal',       name: 'Regal Orb',           weight: 22,  maxStack: 10, tint: 0xd8b0e0, desc: 'Upgrades a magic item to rare.' },
-  { key: 'chaos',       name: 'Chaos Orb',           weight: 30,  maxStack: 10, tint: 0xc0a0d8, desc: 'Reforges a rare item with new modifiers.' },
-  { key: 'vaal',        name: 'Vaal Orb',            weight: 16,  maxStack: 10, tint: 0xd05050, desc: 'Corrupts an item, unpredictably.' },
-  { key: 'exalted',     name: 'Exalted Orb',         weight: 4,   maxStack: 10, tint: 0xe0c060, desc: 'Adds a new modifier to a rare item.' },
-  { key: 'divine',      name: 'Divine Orb',          weight: 2,   maxStack: 10, tint: 0xf0e0a0, desc: 'Rerolls the values of modifiers.' },
-  { key: 'mirror',      name: 'Mirror of Kalandra',  weight: 0.06, maxStack: 5, tint: 0xd8f0ff, desc: 'Creates a mirrored copy of an item.' },
+  { key: 'scroll',      name: '지혜의 주문서',    weight: 320, maxStack: 40, tint: 0x8a7f66, desc: '아이템을 감정합니다.' },
+  { key: 'portal',      name: '차원문 주문서',       weight: 160, maxStack: 40, tint: 0x7f8ea3, desc: '마을로 가는 차원문을 엽니다.' },
+  { key: 'transmute',   name: '변환의 오브', weight: 150, maxStack: 40, tint: 0x9aa0b4, desc: '일반 아이템을 마법 아이템으로 올립니다.' },
+  { key: 'augment',     name: '증강의 오브', weight: 120, maxStack: 30, tint: 0x8fa2c4, desc: '마법 아이템에 속성을 추가합니다.' },
+  { key: 'alteration',  name: '변경의 오브',   weight: 110, maxStack: 20, tint: 0x6c8fc0, desc: '마법 아이템의 속성을 다시 굴립니다.' },
+  { key: 'chromatic',   name: '채색의 오브',       weight: 95,  maxStack: 20, tint: 0xb08fc0, desc: '소켓의 색을 재구성합니다.' },
+  { key: 'fusing',      name: '융합의 오브',       weight: 80,  maxStack: 20, tint: 0xc08a5a, desc: '소켓 간 연결을 재구성합니다.' },
+  { key: 'alchemy',     name: '연금술의 오브',      weight: 55,  maxStack: 10, tint: 0xd0c060, desc: '일반 아이템을 희귀 아이템으로 올립니다.' },
+  { key: 'chance',      name: '기회의 오브',       weight: 60,  maxStack: 20, tint: 0xc7b878, desc: 'Upgrades a normal item to a random rarity.' },
+  { key: 'regal',       name: '제왕의 오브',           weight: 22,  maxStack: 10, tint: 0xd8b0e0, desc: 'Upgrades a magic item to rare.' },
+  { key: 'chaos',       name: '혼돈의 오브',           weight: 30,  maxStack: 10, tint: 0xc0a0d8, desc: '희귀 아이템의 속성을 새로 재구성합니다.' },
+  { key: 'vaal',        name: '발의 오브',            weight: 16,  maxStack: 10, tint: 0xd05050, desc: '아이템을 예측 불가능하게 타락시킵니다.' },
+  { key: 'exalted',     name: '엑잘티드 오브',         weight: 4,   maxStack: 10, tint: 0xe0c060, desc: '희귀 아이템에 새 속성을 추가합니다.' },
+  { key: 'divine',      name: '신성한 오브',          weight: 2,   maxStack: 10, tint: 0xf0e0a0, desc: '속성의 수치를 다시 굴립니다.' },
+  { key: 'mirror',      name: '칼란드라의 거울',  weight: 0.06, maxStack: 5, tint: 0xd8f0ff, desc: '아이템의 복제본을 만듭니다.' },
 ];
 const CUR_BY_KEY = new Map(CURRENCIES.map((c) => [c.key, c]));
 
@@ -168,27 +168,27 @@ const CUR_BY_KEY = new Map(CURRENCIES.map((c) => [c.key, c]));
 // Uniques — fixed base + fixed mods + fixed name (the "always the same" thrill).
 // ---------------------------------------------------------------------------
 export const UNIQUES = [
-  { name: 'Goldrim',    baseKey: 'leatherCap',  flavour: 'Wealth comes to those who seek it.' },
-  { name: 'Wanderlust', baseKey: 'woolShoes',   flavour: 'The journey is the reward.' },
-  { name: 'Meginord\u2019s Girdle', baseKey: 'heavyBelt', flavour: 'The blood of Meginord courses through my veins.' },
-  { name: 'Blackheart', baseKey: 'ironRing',    flavour: 'A heart of coal, a soul of ash.' },
-  { name: 'The Pariah', baseKey: 'coralRing',   flavour: 'Alone, unwanted, unbroken.' },
-  { name: 'Reaper\u2019s Pursuit', baseKey: 'stoneAxe', flavour: 'The harvest never ends.' },
+  { name: '골드림',    baseKey: 'leatherCap',  flavour: '부는 그것을 찾는 자에게 찾아온다.' },
+  { name: '방랑벽', baseKey: 'woolShoes',   flavour: '여정이 곧 보상이다.' },
+  { name: '메기노드의 허리띠', baseKey: 'heavyBelt', flavour: '메기노드의 피가 내 혈관을 타고 흐른다.' },
+  { name: '검은 심장', baseKey: 'ironRing',    flavour: '석탄의 심장, 재의 영혼.' },
+  { name: '파리아', baseKey: 'coralRing',   flavour: '홀로, 외면받아도, 꺾이지 않는.' },
+  { name: '수확자의 추격', baseKey: 'stoneAxe', flavour: '수확은 끝나지 않는다.' },
 ];
 
 // ---------------------------------------------------------------------------
 // Rare-name word pools — evocative two-word names, second word by item class.
 // ---------------------------------------------------------------------------
-const RARE_FIRST = ['Corpse', 'Doom', 'Blood', 'Vengeance', 'Gloom', 'Rage', 'Storm', 'Grim', 'Soul', 'Dread',
-  'Viper', 'Behemoth', 'Pain', 'Havoc', 'Morbid', 'Onslaught', 'Woe', 'Brimstone', 'Carrion', 'Sorrow',
-  'Bramble', 'Kraken', 'Spirit', 'Hate', 'Damnation', 'Victory', 'Dragon', 'Phoenix', 'Maelstrom', 'Wyrm',
-  'Rune', 'Skull', 'Ghoul', 'Torment', 'Entropy', 'Empyrean', 'Loath', 'Death', 'Golem', 'Eagle'];
+const RARE_FIRST = ['시체', '파멸', '피', '복수', '음울', '분노', '폭풍', '냉혹', '영혼', '공포',
+  '독사', '거수', '고통', '혼란', '병적', '맹공', '비탄', '유황', '썩은살', '슬픔',
+  '가시덤불', '크라켄', '혼령', '증오', '저주', '승리', '용', '불사조', '소용돌이', '지룡',
+  '룬', '해골', '구울', '고문', '엔트로피', '천상', '혐오', '죽음', '골렘', '독수리'];
 const RARE_SECOND = {
-  weapon:  ['Bane', 'Render', 'Cleaver', 'Sunder', 'Spike', 'Edge', 'Fang', 'Wound', 'Thirst', 'Song', 'Piercer', 'Roar', 'Gutter', 'Reaver', 'Slayer', 'Wreath'],
-  armour:  ['Guard', 'Ward', 'Cloak', 'Shell', 'Veil', 'Aegis', 'Carapace', 'Hide', 'Cover', 'Mantle', 'Skin', 'Shroud', 'Wall', 'Bastion'],
-  jewelry: ['Charm', 'Torc', 'Loop', 'Knot', 'Circle', 'Grip', 'Whorl', 'Clasp', 'Bead', 'Idol', 'Sigil', 'Talisman', 'Band', 'Gyre'],
-  belt:    ['Bind', 'Girdle', 'Coil', 'Lash', 'Buckle', 'Hold', 'Clasp', 'Wrap'],
-  other:   ['Relic', 'Remnant', 'Vestige', 'Token', 'Fragment', 'Echo'],
+  weapon:  ['재앙', '가르개', '쪼개개', '분쇄', '가시', '날', '송곳니', '상처', '갈증', '노래', '꿰뚫개', '포효', '도살', '약탈자', '학살자', '화환'],
+  armour:  ['수호', '결계', '망토', '껍질', '장막', '방패', '갑각', '가죽', '덮개', '외투', '피부', '수의', '장벽', '보루'],
+  jewelry: ['매력', '목걸쇠', '고리', '매듭', '원환', '손아귀', '소용돌이', '걸쇠', '구슬', '우상', '인장', '부적', '띠', '선회'],
+  belt:    ['속박', '허리띠', '똬리', '채찍', '버클', '움켜쥠', '걸쇠', '감싸개'],
+  other:   ['유물', '잔재', '흔적', '징표', '파편', '메아리'],
 };
 function rareClass(base) {
   if (base.slot === 'weapon') return 'weapon';
@@ -207,7 +207,7 @@ function composeMagicName(base, prefixes, suffixes) {
   const of = suffixes[0]?.of;
   let n = base.name;
   if (word) n = `${word} ${n}`;
-  if (of) n = `${n} ${of}`;
+  if (of) n = `${of} ${n}`;
   return n;
 }
 
@@ -319,7 +319,7 @@ export function generateUnique(ilvl = 1, def = null) {
 }
 function rollFixed(m, kind) {
   const vals = (m.rolls || []).map((r) => ri(r[0], r[1]));
-  return { kind, group: m.group || m.render.toString(), tier: 0, tierName: 'Unique', text: m.render(vals), values: vals };
+  return { kind, group: m.group || m.render.toString(), tier: 0, tierName: '고유', text: m.render(vals), values: vals };
 }
 
 // ---------------------------------------------------------------------------
@@ -368,29 +368,29 @@ export function describeItem(item) {
   // Base offensive / defensive block.
   if (item.stats?.kind === 'weapon') {
     const s = item.stats;
-    push('stat', `Physical Damage: ${s.physMin}-${s.physMax}`, { hl: true });
-    push('stat', `Critical Strike Chance: ${s.crit.toFixed(2)}%`);
-    push('stat', `Attacks per Second: ${s.aps.toFixed(2)}`);
+    push('stat', `물리 피해: ${s.physMin}-${s.physMax}`, { hl: true });
+    push('stat', `치명타 확률: ${s.crit.toFixed(2)}%`);
+    push('stat', `초당 공격 횟수: ${s.aps.toFixed(2)}`);
     const dps = ((s.physMin + s.physMax) / 2) * s.aps;
-    push('stat', `Physical DPS: ${dps.toFixed(1)}`, { hl: true });
+    push('stat', `물리 DPS: ${dps.toFixed(1)}`, { hl: true });
     push('sep');
   } else if (item.stats?.kind === 'armour') {
-    const label = item.stats.defType === 'ar' ? 'Armour'
-      : item.stats.defType === 'ev' ? 'Evasion Rating' : 'Energy Shield';
+    const label = item.stats.defType === 'ar' ? '방어도'
+      : item.stats.defType === 'ev' ? '회피 등급' : '에너지 보호막';
     push('stat', `${label}: ${item.stats.def}`, { hl: true });
     push('sep');
   } else if (item.slot === 'currency') {
-    push('stat', `Stack Size: ${item.stack}/${item.maxStack}`);
+    push('stat', `중첩: ${item.stack}/${item.maxStack}`);
     push('sep');
   }
 
   // Requirements.
   const r = item.req;
-  const reqParts = [`Level ${r.level}`];
-  if (r.str) reqParts.push(`${r.str} Str`);
-  if (r.dex) reqParts.push(`${r.dex} Dex`);
-  if (r.int) reqParts.push(`${r.int} Int`);
-  if (item.slot !== 'currency') { push('req', `Requires ${reqParts.join(', ')}`); push('sep'); }
+  const reqParts = [`레벨 ${r.level}`];
+  if (r.str) reqParts.push(`힘 ${r.str}`);
+  if (r.dex) reqParts.push(`민첩 ${r.dex}`);
+  if (r.int) reqParts.push(`지능 ${r.int}`);
+  if (item.slot !== 'currency') { push('req', `요구 조건: ${reqParts.join(', ')}`); push('sep'); }
 
   // Implicit mods (rendered with the implicit separator style).
   if (item.implicits.length) {

@@ -24,8 +24,8 @@ const DOLL = {
   flask1: [10, 286, 30, 40], flask2: [46, 286, 30, 40], flask3: [82, 286, 30, 40],
   flask4: [118, 286, 30, 40], flask5: [154, 286, 30, 40],
 };
-const SLOT_LABEL = { weapon: 'WEAPON', offhand: 'OFF', helm: 'HELM', body: 'BODY', gloves: 'GLOVES',
-  belt: 'BELT', boots: 'BOOTS', amulet: 'AMULET', ring1: 'RING', ring2: 'RING',
+const SLOT_LABEL = { weapon: '무기', offhand: '보조', helm: '투구', body: '갑옷', gloves: '장갑',
+  belt: '허리띠', boots: '신발', amulet: '부적', ring1: '반지', ring2: '반지',
   flask1: 'I', flask2: 'II', flask3: 'III', flask4: 'IV', flask5: 'V' };
 
 export class Inventory {
@@ -33,7 +33,7 @@ export class Inventory {
     this.tooltip = tooltip;
     this.scrim = el('div', 'clickable', root); this.scrim.id = 'inv-scrim';
     this.panel = el('div', 'forged clickable', root); this.panel.id = 'inventory';
-    el('div', 'panel-title', this.panel).textContent = 'Inventory';
+    el('div', 'panel-title', this.panel).textContent = '소지품';
 
     const cols = el('div', 'inv-cols', this.panel);
     this.doll = el('div', 'paperdoll', cols);

@@ -18,21 +18,21 @@ const BEH = {
   swarm: {
     // Display name. Only the boss had one, so the death screen reported the raw archetype
     // id ("slain by swarm"). Named here beside the tuning so any UI can read `beh.name`.
-    name: 'a Gnawing Wretch',
+    name: '갉아먹는 비참한 자',
     hp: 44, speed: 4.7, accel: 12, sep: 1.0, sepW: 2.4, mass: 0.8,
     close: 5.5, flank: 0.9, turn: 11, armour: 0,
     attacks: [{ id: 'swarm_slash', kind: 'melee', windup: 0.44, recover: 0.34, cooldown: 1.05,
       range: 1.55, radius: 1.7, damageType: 'physical', tele: 0x66e0ff, teleKind: 'tele_arc' }],
   },
   caster: {
-    name: 'a Pale Chanter',
+    name: '창백한 주문 영창자',
     hp: 58, speed: 3.3, accel: 9, sep: 1.2, sepW: 2.0, mass: 1.0,
     kiteMin: 6.5, kiteMax: 12.5, strafe: 1.0, turn: 7, armour: 4,
     attacks: [{ id: 'caster_bolt', kind: 'projectile', windup: 1.05, recover: 0.62, cooldown: 2.35,
       range: 14, radius: 0.55, damageType: 'cold', tele: 0xb060ff, teleKind: 'tele_cast', interruptible: true }],
   },
   brute: {
-    name: 'a Bone Ogre',
+    name: '뼈 오우거',
     hp: 240, speed: 2.05, accel: 6, sep: 1.6, sepW: 1.5, mass: 2.6,
     close: 4.0, turn: 4.5, armour: 42,
     attacks: [
@@ -42,14 +42,14 @@ const BEH = {
         range: 13, radius: 1.7, damageType: 'physical', tele: 0xff9a3e, teleKind: 'tele_line' }],
   },
   exploder: {
-    name: 'a Bloated Husk',
+    name: '부풀어 오른 껍데기',
     hp: 32, speed: 4.35, accel: 14, sep: 1.1, sepW: 2.2, mass: 0.9,
     fuseRange: 2.4, turn: 10, armour: 0,
     detonate: { windup: 0.98, radius: 3.5, damageType: 'fire', tele: 0xff9020, teleKind: 'tele_ring' },
   },
   boss: {
     hp: 2600, speed: 2.55, accel: 6, sep: 2.0, sepW: 1.0, mass: 6, turn: 4, armour: 55,
-    name: 'Ordolth, the Sundered', phases: 3,
+    name: '갈라진 자 오르돌스', phases: 3,
     // phase-gated pattern pools — behaviour escalates, not just numbers
     patterns: {
       1: [
@@ -393,7 +393,7 @@ export class Enemy {
     const frac = e.hp / e.maxHp;
     const wantPhase = frac <= 0.33 ? 3 : frac <= 0.66 ? 2 : 1;
     if (wantPhase > this.phase) { this.phase = wantPhase; e.phase = wantPhase;
-      bus.emit(EV.UI_TOAST, { text: `${this.beh.name} — Phase ${wantPhase}`, tier: 'boss' });
+      bus.emit(EV.UI_TOAST, { text: `${this.beh.name} — ${wantPhase} 페이즈`, tier: 'boss' });
       bus.emit(EV.CAMERA_SHAKE, 0.7); bus.emit(EV.SFX_PLAY, { id: 'boss_phase', pos: e.pos });
       this.curAttack = null; this._enter('recover', 0.4); return; }
     if (!p || !p.alive) { this._enter('idle'); return; }

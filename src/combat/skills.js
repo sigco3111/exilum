@@ -36,7 +36,7 @@ export const BLOOD_COLOR = 0xd21f24;
 export const SKILLS = {
   // 1) MELEE CLEAVE — wide physical arc sweep. Weighty, knockback, hits everything in front.
   cleave: {
-    id: 'cleave', name: 'Cleave', key: 'lmb',
+    id: 'cleave', name: '가르기', key: 'lmb',
     cost: 0, cooldown: 0, castTime: 0.14, recovery: 0.18,
     dmg: { base: 46, type: 'physical', critChance: 0.06, penetration: 0 },
     deliver: 'cone',
@@ -50,7 +50,7 @@ export const SKILLS = {
 
   // 2) RANGED PROJECTILE — a single heavy fireball that detonates in a small AoE and ignites.
   fireball: {
-    id: 'fireball', name: 'Fireball', key: 'q',
+    id: 'fireball', name: '화염구', key: 'q',
     cost: 18, cooldown: 0, castTime: 0.26, recovery: 0.12,
     dmg: { base: 72, type: 'fire', critChance: 0.08, penetration: 0 },
     deliver: 'projectile',
@@ -72,7 +72,7 @@ export const SKILLS = {
   stormLance: {
     // key 'w' -> 'f': W is now MOVE FORWARD (WASD locomotion in player.js). Every other
     // skill key was already clear of WASD; only this one collided.
-    id: 'stormLance', name: 'Storm Lance', key: 'f',
+    id: 'stormLance', name: '폭풍 창', key: 'f',
     cost: 22, cooldown: 0, castTime: 0.2, recovery: 0.1,
     dmg: { base: 40, type: 'lightning', critChance: 0.09, penetration: 12 },
     deliver: 'projectile',
@@ -91,7 +91,7 @@ export const SKILLS = {
 
   // 4) AOE GROUND SLAM — big radial shockwave, huge knockback + stagger, the heaviest feel.
   groundSlam: {
-    id: 'groundSlam', name: 'Ground Slam', key: 'e',
+    id: 'groundSlam', name: '대지 강타', key: 'e',
     cost: 30, cooldown: 2.4, castTime: 0.34, recovery: 0.26,
     dmg: { base: 118, type: 'physical', critChance: 0.10, penetration: 0 },
     deliver: 'circle',
@@ -105,7 +105,7 @@ export const SKILLS = {
 
   // 5) CHANNELLED BEAM — held chaos beam, continuous ticks along a rectangle, builds poison.
   voidBeam: {
-    id: 'voidBeam', name: 'Void Beam', key: 'r',
+    id: 'voidBeam', name: '공허 광선', key: 'r',
     cost: 14, cooldown: 0.6, castTime: 0.12, recovery: 0.1,
     channel: { duration: 1.6, tickRate: 0.09 },
     dmg: { base: 22, type: 'chaos', critChance: 0.05, penetration: 0 },
@@ -120,7 +120,7 @@ export const SKILLS = {
 
   // 6) NOVA / BURST — instant cold ring from the player, chills the pack and can freeze.
   frostNova: {
-    id: 'frostNova', name: 'Frost Nova', key: '1',
+    id: 'frostNova', name: '냉기 폭발', key: '1',
     cost: 26, cooldown: 3.0, castTime: 0.16, recovery: 0.2,
     dmg: { base: 64, type: 'cold', critChance: 0.08, penetration: 0 },
     deliver: 'nova',
@@ -134,7 +134,7 @@ export const SKILLS = {
 
   // 7) DoT FIELD — lingering caustic ground that ticks chaos + poison to anything standing in it.
   causticField: {
-    id: 'causticField', name: 'Caustic Field', key: '2',
+    id: 'causticField', name: '부식 지대', key: '2',
     cost: 34, cooldown: 4.0, castTime: 0.28, recovery: 0.18,
     dmg: { base: 18, type: 'chaos', critChance: 0.04, penetration: 0 },
     deliver: 'field',
@@ -149,7 +149,7 @@ export const SKILLS = {
   // 8) MOBILITY / UTILITY — a blink dash with i-frames that erupts a small displacement nova
   //    on arrival (utility first, tiny payload second). Respects walls via moveCapsule.
   blink: {
-    id: 'blink', name: 'Blink Step', key: 'space',
+    id: 'blink', name: '점멸 이동', key: 'space',
     cost: 20, cooldown: 1.1, castTime: 0.0, recovery: 0.08,
     dmg: { base: 30, type: 'lightning', critChance: 0.05, penetration: 0 },
     deliver: 'dash',
@@ -163,7 +163,7 @@ export const SKILLS = {
 
   // 9) FORK PROJECTILE — glacial shards that split into two on the first hit, chilling a spread.
   glacialShards: {
-    id: 'glacialShards', name: 'Glacial Shards', key: '3',
+    id: 'glacialShards', name: '빙하 파편', key: '3',
     cost: 24, cooldown: 0, castTime: 0.22, recovery: 0.12,
     dmg: { base: 34, type: 'cold', critChance: 0.07, penetration: 0 },
     deliver: 'projectile',
@@ -181,7 +181,7 @@ export const SKILLS = {
 
   // 10) HOMING SEEKER — a slow chaos orb that curves toward the nearest foe; area detonation.
   hexSeeker: {
-    id: 'hexSeeker', name: 'Hex Seeker', key: '4',
+    id: 'hexSeeker', name: '저주 추적자', key: '4',
     cost: 28, cooldown: 1.6, castTime: 0.24, recovery: 0.12,
     dmg: { base: 58, type: 'chaos', critChance: 0.07, penetration: 8 },
     deliver: 'projectile',

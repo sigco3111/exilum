@@ -152,7 +152,7 @@ function injectStyles() {
   st.id = 'loot-label-styles';
   st.textContent = `
   #loot-labels { position:absolute; inset:0; pointer-events:none;
-    font-family:"Cinzel","Trajan Pro",Georgia,serif; z-index:12; }
+    font-family:"Cinzel","Trajan Pro","Noto Serif KR",Georgia,serif; z-index:12; }
   #loot-labels .ll { position:absolute; transform:translate(-50%,-50%);
     pointer-events:auto; cursor:pointer; white-space:nowrap; user-select:none;
     padding:2px 9px; border-radius:2px; letter-spacing:.02em; text-align:center;
@@ -364,14 +364,14 @@ function tryPickup(drop, fromClick) {
     const d = Math.hypot(drop.tok.group.position.x - pp.x, drop.tok.group.position.z - pp.z);
     const reach = fromClick ? LCFG.clickReach : LCFG.pickupRadius;
     if (d > reach) {
-      if (fromClick) bus.emit(EV.UI_TOAST, { text: 'Out of range', tier: 'normal', color: rarityColor('normal') });
+      if (fromClick) bus.emit(EV.UI_TOAST, { text: '거리가 너무 멉니다', tier: 'normal', color: rarityColor('normal') });
       return false;
     }
   }
   const item = drop.item;
   const ok = Inventory.add(item);
   if (!ok) {
-    bus.emit(EV.UI_TOAST, { text: 'Inventory full', tier: 'normal', color: rarityColor('normal') });
+    bus.emit(EV.UI_TOAST, { text: '소지품이 가득 찼습니다', tier: 'normal', color: rarityColor('normal') });
     return false;
   }
 

@@ -23,7 +23,7 @@ export class Tooltip {
     if (inv && typeof inv.describe === 'function') { try { return inv.describe(item); } catch (e) { /* fall through */ } }
     // Fallback: build lines from the item's own precomputed fields (no affix logic here).
     const lines = [];
-    lines.push({ kind: 'name', text: item.name || item.base?.name || 'Unknown', color: hexCss(item.color) });
+    lines.push({ kind: 'name', text: item.name || item.base?.name || '알 수 없음', color: hexCss(item.color) });
     if (item.base?.name && item.base.name !== item.name) lines.push({ kind: 'base', text: item.base.name });
     for (const im of item.implicits || []) lines.push({ kind: 'implicit', text: im.text || im });
     const mods = [...(item.prefixes || []), ...(item.suffixes || [])];
@@ -34,7 +34,7 @@ export class Tooltip {
       if (item.req.str) parts.push(`${item.req.str} Str`);
       if (item.req.dex) parts.push(`${item.req.dex} Dex`);
       if (item.req.int) parts.push(`${item.req.int} Int`);
-      if (parts.length) { lines.push({ kind: 'sep' }); lines.push({ kind: 'req', text: 'Requires ' + parts.join(', ') }); }
+      if (parts.length) { lines.push({ kind: 'sep' }); lines.push({ kind: 'req', text: '요구 조건: ' + parts.join(', ') }); }
     }
     return {
       name: item.name || item.base?.name, color: item.color,
@@ -51,7 +51,7 @@ export class Tooltip {
     const rc = d.color != null ? hexCss(d.color) : (rarityOf(d.rarity || item.rarity).color);
 
     // Header
-    this.head.textContent = d.name || item.name || 'Item';
+    this.head.textContent = d.name || item.name || '아이템';
     this.head.style.color = rc;
     this.head.style.textShadow = `0 0 10px ${rc}55, 0 1px 2px #000`;
     this.head.style.fontVariant = 'small-caps';

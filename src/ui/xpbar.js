@@ -31,7 +31,7 @@ export class XpBar {
 
     if (st.level !== this._lvl) {
       this._lvl = st.level;
-      this.level.textContent = `Level ${st.level}`;
+      this.level.textContent = `레벨 ${st.level}`;
     }
 
     if (this._shineT > 0) {

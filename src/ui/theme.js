@@ -24,13 +24,13 @@ export const PAL = {
 // PoE-style rarity model — colours match LootSystem's hex ints exactly.
 // Accepts a rarity string key, a numeric tier (0..5), OR a raw hex int.
 export const RARITY = {
-  normal:   { name: 'Normal',   color: '#c8c8c8', glow: 'rgba(200,200,200,.30)' },
-  magic:    { name: 'Magic',    color: '#8888ff', glow: 'rgba(136,136,255,.42)' },
-  rare:     { name: 'Rare',     color: '#ffff77', glow: 'rgba(255,255,119,.46)' },
-  unique:   { name: 'Unique',   color: '#af6025', glow: 'rgba(175,96,37,.50)'   },
-  gem:      { name: 'Gem',      color: '#1ba29b', glow: 'rgba(27,162,155,.42)'  },
-  currency: { name: 'Currency', color: '#aa9e82', glow: 'rgba(170,158,130,.40)' },
-  quest:    { name: 'Quest',    color: '#54d64a', glow: 'rgba(84,214,74,.42)'   },
+  normal:   { name: '일반',   color: '#c8c8c8', glow: 'rgba(200,200,200,.30)' },
+  magic:    { name: '마법',    color: '#8888ff', glow: 'rgba(136,136,255,.42)' },
+  rare:     { name: '희귀',     color: '#ffff77', glow: 'rgba(255,255,119,.46)' },
+  unique:   { name: '고유',   color: '#af6025', glow: 'rgba(175,96,37,.50)'   },
+  gem:      { name: '보석',      color: '#1ba29b', glow: 'rgba(27,162,155,.42)'  },
+  currency: { name: '화폐', color: '#aa9e82', glow: 'rgba(170,158,130,.40)' },
+  quest:    { name: '퀘스트',    color: '#54d64a', glow: 'rgba(84,214,74,.42)'   },
 };
 const TIER_ORDER = ['normal', 'magic', 'rare', 'unique', 'gem', 'currency', 'quest'];
 
